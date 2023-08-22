@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+#article-title {
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  padding-bottom: 15px;
+}
