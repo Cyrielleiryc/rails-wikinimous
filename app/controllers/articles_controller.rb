@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show]
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
     @articles = Article.all
@@ -17,6 +17,19 @@ class ArticlesController < ApplicationController
     @article.save if @article.valid?
 
     redirect_to articles_path
+  end
+
+  def edit
+  end
+
+  def update
+    @article.update(article_params)
+    redirect_to article_path(@article)
+  end
+
+  def destroy
+    @article.destroy
+    redirect_to articles_path, status: :see_other
   end
 
   private
